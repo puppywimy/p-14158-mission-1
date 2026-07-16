@@ -15,14 +15,11 @@ import java.time.LocalDateTime
 abstract class BaseEntity {
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    final var id: Int = 0
-        private set
+    val id: Int = 0
 
     @CreatedDate
-    final var createDate: LocalDateTime? = null
-        private set
+    lateinit var createDate: LocalDateTime
 
     @LastModifiedDate
-    final var modifyDate: LocalDateTime? = null
-        private set
+    lateinit var modifyDate: LocalDateTime
 }

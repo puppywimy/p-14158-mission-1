@@ -9,10 +9,10 @@ import jakarta.persistence.ManyToOne
 @Entity
 class Post(
     @ManyToOne
-    var author: Member?,
-    var title: String?,
+    val author: Member,
+    var title: String,
     @Column(columnDefinition = "TEXT")
-    var content: String?
+    var content: String
 ) : BaseEntity() {
     override fun toString(): String =
         "Post(author=$author, title=$title, content=$content)"

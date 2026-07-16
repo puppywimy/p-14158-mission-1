@@ -13,11 +13,9 @@ import org.springframework.transaction.annotation.Transactional
 class BaseInitData(
     private val memberService: MemberService,
     private val postService: PostService,
-) {
-    @Autowired
     @Lazy
-    private lateinit var self: BaseInitData
-
+    private val self: BaseInitData
+) {
     @Bean
     fun baseInitDataApplicationRunner(): ApplicationRunner =
         ApplicationRunner { self.work1() }
